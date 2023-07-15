@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Password Generator</title>
+    <link rel="stylesheet" href="styling.css" >
+</head>
+    <body>
+        <div class="content" id="content-divider">
+            <div class="header block" >
+                <h1 style="display: flex; justify-content: center;">Random Password Generator</h1>
+            </div>
+            <div class="block">
+                <form action="" id="formInfo">
+                    <fieldset>
+                        <p> How many characters would you like the password to have? <br/>
+                            <label>
+                                <input type="number" id="num-characters" min=8 max=128 required="required" placeholder="value"/>
+                            </label>
+                        </p>
+                    </fieldset>
+                    <fieldset>
+                        <div id="case-choice">
+                            <p> What kind of letters would like to be included? <br/>
+                                <label><input type="radio" name="letters" value="uppercase" checked="checked" /> uppercase (ABC)</label>
+                                <br/>
+                                <label><input type="radio" name="letters" value="lowercase"/> lowercase (abc)</label>
+                                <br/>
+                                <label><input type="radio" name="letters" value="both"/> both</label>
+                                <br/>
+                                <label><input type="radio" name="letters" value="none"/> none</label>
+                            </p>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <div id="digits-boolean">
+                            <p> Include digits? <br/>
+                                <label><input type="radio" name="digits" value="true" checked="checked"/> Yes </label><br/>
+                                <label><input type="radio" name="digits" value="false" /> No</label>
+                            </p>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                    <div id="symbol-choices">
+                        <p> Symbols to be included: <br/>
+                            <label><input type="checkbox" name="symbols" value="$"/> $ (dollar sign) &emsp;</label>
+                            <label><input type="checkbox" name="symbols" value="%"/> % (percent sign) &emsp;</label>
+                            <label><input type="checkbox" name="symbols" value="*"/> * (asterisk)</label> <br/>
+                            <label><input type="checkbox" name="symbols" value="-"/> - (minus sign) &emsp;</label>
+                            <label><input type="checkbox" name="symbols" value="/"/> / (slash) &emsp;</label>
+                            <label><input type="checkbox" name="symbols" value="#"/> # (pound sign)</label>  <br/>
+                            <label><input type="checkbox" name="symbols" value="@"/> @ (at sign) &emsp;</label>
+                            <label><input type="checkbox" name="symbols" value="!"/> ! (exclamation mark) &emsp;</label>
+                            <label><input type="checkbox" name="symbols" value="."/> . (period) <br/></label>
+                            <label><input type="checkbox" name="symbols" value="&"/> & (ampersand) &emsp;</label>
+                        </p>
+                    </div>
+                    </fieldset>
+                    <fieldset>
+                        <p> What would you like the password to begin with? <br/>
+                            <label id="beginning_id">
+                                <input type="radio" name="beginning" id="all-let" value="letter" /> either uppercase or lowercase letter <br/>
+                                <input type="radio" name="beginning" id="up" value="up-letter" /> uppercase letter <br/>
+                                <input type="radio" name="beginning" id="low"  value="low-letter" /> lowercase letter <br/>
+                                <input type="radio" name="beginning" id="dig" value="digit" /> digit <br/>
+                                <input type="radio" name="beginning" id="sym" value="symbol"  /> symbol <br/>
+                            </label>
+                        </p>
+                    </fieldset>
+                    <p id="error" hidden="hidden" style="color: darkred;">
+                        The password must include letters, digits, and/or symbols
+                    </p>
+                    <p id="another-error" hidden="hidden">
+                        Please enter a number for the number of characters
+                    </p>
+                    <p>
+                        <button type="submit" class="generate-button" >Generate Password</button>
+                    </p>
+                </form>
+                <div>
+                    <p id="password" hidden="hidden">
+                        PASSWORD HERE
+                    </p>
+                </div>
+                <div>
+                    <button type="button" id="copy-button"> Copy to clipboard </button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+<script src="functionality.js"></script>
